@@ -34,7 +34,7 @@ public class Tools extends Connexion {
         WebDriverWait wait = new WebDriverWait(driver, time);
         wait.until(ExpectedConditions.visibilityOf(element));
         String textvf= element.getText();
-        Assert.assertEquals(text,textvf);
+        Assert.assertEquals(textvf,text);
         System.out.println("OK"+element.getText());
     }
 }
