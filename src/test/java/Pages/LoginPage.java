@@ -58,6 +58,4 @@ public class LoginPage extends Tools {
         checkElement(xpathPageLogin,verf);
     }
 
-
-
 }

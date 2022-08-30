@@ -5,6 +5,8 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import ru.yandex.qatools.ashot.AShot;
@@ -23,9 +25,9 @@ public class Connexion {
     public void setup (){
         report = new ExtentReports(System.getProperty("user.dir") + "\\target\\ExtentReport.html");
         test=report.startTest("test1");
-        System.setProperty("webdriver.chrome.driver",
-                System.getProperty("user.dir")+"\\src\\test\\resources\\Driver\\chromedriver.exe");
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.edge.driver",
+                System.getProperty("user.dir")+"\\src\\test\\resources\\Driver\\msedgedriver.exe");
+        driver = new EdgeDriver();
         driver.get("https://practice.automationtesting.in/");
         System.out.println("La page est bien affiché");
         driver.manage().window().maximize();
@@ -48,6 +50,6 @@ public class Connexion {
     @AfterTest
     public void fermeture()  {
         screen();
-        driver.close();
+        driver.quit();
     }
 }
