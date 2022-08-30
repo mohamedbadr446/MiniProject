@@ -1,6 +1,6 @@
 package Pages;
 
-import BaseTools.Tools;
+import Utils.Tools;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

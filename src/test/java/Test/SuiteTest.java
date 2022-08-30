@@ -1,11 +1,11 @@
 package Test;
 
-import Connexion.Connexion;
+import Connexion.SetUp;
 import Constante.JDD;
 import Pages.LoginPage;
 import org.testng.annotations.Test;
 
-public class SuiteTest extends Connexion {
+public class SuiteTest extends SetUp {
 
     @Test
     public void runLogin() {

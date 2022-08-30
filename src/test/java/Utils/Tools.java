@@ -1,12 +1,12 @@
-package BaseTools;
+package Utils;
 
-import Connexion.Connexion;
+import Connexion.SetUp;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class Tools extends Connexion {
+public class Tools extends SetUp {
 
 
     private final int time=60;
