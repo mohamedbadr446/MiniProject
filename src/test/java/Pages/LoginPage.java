@@ -55,6 +55,7 @@ public class LoginPage extends Tools {
     }
 
     public void verfierPageLogin(String verf) {
+
         checkElement(xpathPageLogin,verf);
     }
 
