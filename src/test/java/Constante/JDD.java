@@ -10,5 +10,5 @@ public class JDD {
     public static final String url="https://practice.automationtesting.in/";
     public static final String msgError="Error: the password you entered for the username "+ email+" is incorrect. Lost your password?";
     public static final String msgVerifMyAcount="new arrivals";
-    //dlkjn
+    public static final String produit="Mastering JavaScript";
 }

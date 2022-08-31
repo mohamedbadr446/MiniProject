@@ -1,5 +1,6 @@
 package Pages;
 
+import Constante.Xpaths;
 import Utils.Tools;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,29 +8,35 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class Pannier extends Tools {
-    public WebElement driver;
-
-    @FindBy(xpath = "//a[contains(@Class,'wpmenucart-contents')]")
+    public WebDriver driver;
+    Xpaths xpaths=new Xpaths();
+    @FindBy(xpath = Xpaths.Pannier)
     private WebElement panier;
-   // @FindBy(xpath = "//h2[contains(text(),'Basket ')]")
-   //
-    @FindBy(xpath = "//a[text()='Mastering JavaScript']")
+    @FindBy(xpath = Xpaths.check_prod)
     private WebElement Check_Prod;
-    @FindBy(xpath = "//a[contains(text(),'Shop')]")
-    private  WebElement xpath_Shop;
-    @FindBy(xpath = "//h3[contains(text(),'Mastering JavaScript')]")
-    private WebElement xpath_Produit;
-    @FindBy(xpath = "//a[contains(text(),'Add to basket')and @data-product_id='165']")
+    @FindBy(xpath = Xpaths.shop)
+    private WebElement shop;
+    @FindBy(xpath = Xpaths.produit)
+    private WebElement produit;
+    @FindBy(xpath = Xpaths.addToBasket)
     private WebElement xpath_AddToBasket;
 
 
     public Pannier(WebDriver driver) {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
-    public void clickShop(){ clickElement(xpath_Shop);}
-    public void clickProduit(){ clickElement(xpath_Produit);}
-    public void clickAddToBasket(){ clickElement(xpath_AddToBasket);}
 
+    public void clickShop() {
+        clickElement(shop);
+    }
+
+    public void clickProduit() {
+        clickElement(produit);
+    }
+
+    public void clickAddToBasket() {
+        clickElement(xpath_AddToBasket);
+    }
 
 
     public void clickPanier() {
@@ -37,10 +44,8 @@ public class Pannier extends Tools {
     }
 
 
-
-
     public void verfierPagePannier(String verf) {
-        checkElement(Check_Prod,verf);
+        checkElement(Check_Prod, verf);
     }
 
 

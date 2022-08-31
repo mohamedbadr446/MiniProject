@@ -20,4 +20,13 @@ public class Xpaths {
     public static final String logoHome="//img[contains(@title,'Automation Practice Site')]";
     public static final String verifHome="//h2[contains(text(),'new arrivals')]";
 
+    //Pannier Page
+    public static final String Pannier="//a[contains(@Class,'wpmenucart-contents')]";
+    public static final String check_prod="//a[text()='Mastering JavaScript']";
+    public static final String shop="//a[contains(text(),'Shop')]";
+    public static final String produit="//h3[contains(text(),'"+JDD.produit+"')]";
+    public static final String addToBasket="//a[contains(text(),'Add to basket')and @data-product_id='165']";
+
+
+
 }
