@@ -1,34 +1,35 @@
 package Pages;
 
+import Constante.Xpaths;
 import Utils.Tools;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RegisterPage extends Tools {
+public class LoginFaildPage extends Tools {
+
     //	MyAcount
 
-
-    @FindBy(xpath = "//a[contains(text(),'My Account')]")
+    @FindBy(xpath = Xpaths.myAccount)
     private WebElement myAccount;
 
 
     //	Login
 
-    @FindBy(xpath = "//input[@id='reg_email']")
+    @FindBy(xpath = Xpaths.login_username)
     private WebElement email_Reg;
 
-    @FindBy(xpath = "//input[@id='reg_password']")
+    @FindBy(xpath = Xpaths.login_pwd)
     private WebElement pwd_Reg;
 
-    @FindBy(xpath = "//input[@name='register']")
+    @FindBy(xpath = Xpaths.login_button)
     private WebElement button_Reg;
 
-    @FindBy(xpath = "//small[contains(text(),'he password should')]")
+    @FindBy(xpath = Xpaths.msgError)
     private WebElement msgError;
 
-    public RegisterPage(WebDriver driver)
+    public LoginFaildPage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
     }
@@ -36,22 +37,18 @@ public class RegisterPage extends Tools {
     public void clickMyaccount() {
         clickElement(myAccount);
     }
-    public void insertResgEmail(String emailSucc) {
+    public void insertEmail(String emailSucc) {
         insertElement(email_Reg,emailSucc);
     }
 
-    public void insertRegPwd(String pwd) {
+    public void insertPwd(String pwd) {
         insertElement(pwd_Reg,pwd);
     }
 
-    public void clickButtonReg() {
+    public void clickButton() {
         clickElement(button_Reg);
     }
-    public void cliclZone()
-    {
-        clickElement(email_Reg);
-        clickElement(pwd_Reg);
-    }
+
     public void verfierMsgError(String msg)
     {
         checkElement(msgError,msg);

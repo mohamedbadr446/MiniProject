@@ -1,5 +1,6 @@
 package Pages;
 
+import Constante.Xpaths;
 import Utils.Tools;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,22 +14,22 @@ public class LoginPage extends Tools {
     //	MyAcount
 
 
-    @FindBy(xpath = "//a[contains(text(),'My Account')]")
+    @FindBy(xpath = Xpaths.myAccount)
     private WebElement myAccount;
 
 
     //	Login
 
-    @FindBy(xpath = "//input[@name='username']")
+    @FindBy(xpath = Xpaths.login_username)
     private WebElement username_Login;
 
-    @FindBy(xpath = "//input[@name='password']")
+    @FindBy(xpath = Xpaths.login_pwd)
     private WebElement pwd_Login;
 
-    @FindBy(xpath = "//input[@name='login']")
+    @FindBy(xpath = Xpaths.login_button)
     private WebElement button_Login;
 
-    @FindBy(xpath = "//p[contains(text(),'Hello')]")
+    @FindBy(xpath = Xpaths.pageLoginVF)
     private WebElement xpathPageLogin;
 
 

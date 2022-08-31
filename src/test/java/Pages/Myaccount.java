@@ -1,6 +1,7 @@
 package Pages;
 
 
+import Constante.Xpaths;
 import Utils.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,13 +13,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Myaccount extends Tools {
 
-    @FindBy(xpath = "//a[contains(.,'My Account')]")
+    @FindBy(xpath = Xpaths.myAccount)
     WebElement myaccount;
 
-    @FindBy(xpath = "//img[contains(@title,'Automation Practice Site')]")
+    @FindBy(xpath = Xpaths.logoHome)
     WebElement logohome;
 
-    @FindBy(xpath = "//img[@alt='Shop Selenium Books']")
+    @FindBy(xpath = Xpaths.verifHome)
     WebElement verifhome;
 
     WebDriver driver;
@@ -35,13 +36,9 @@ public class Myaccount extends Tools {
        clickElement(myaccount);
     }
     public void cliqueLogo()  {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+
         clickElement(logohome);
-        //ks
+
     }
 
     public void verifhome(String text)
