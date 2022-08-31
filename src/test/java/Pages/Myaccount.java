@@ -41,6 +41,7 @@ public class Myaccount extends Tools {
             throw new RuntimeException(e);
         }
         clickElement(logohome);
+        //ks
     }
 
     public void verifhome(String text)
