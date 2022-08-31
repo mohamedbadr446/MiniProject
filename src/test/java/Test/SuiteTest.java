@@ -15,6 +15,6 @@ public class SuiteTest extends SetUp {
         loginPage.insertLoginPwd(JDD.pwd);
         loginPage.clickButtonLogin();
         loginPage.verfierPageLogin(JDD.msgPage);
-        //qqkj
+        //qq
     }
 }
