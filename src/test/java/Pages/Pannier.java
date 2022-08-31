@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class Pannier extends Tools {
-    public WebElement driver;
+    public WebDriver driver;
 
     @FindBy(xpath = "//a[contains(@Class,'wpmenucart-contents')]")
     private WebElement panier;
