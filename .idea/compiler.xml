@@ -7,7 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Mini-Projet" />
+<<<<<<< HEAD
+=======
         <module name="MiniProject1" />
+>>>>>>> 9abe601422105d52e972bddea1a869ce017e2672
         <module name="MiniProject" />
       </profile>
     </annotationProcessing>
