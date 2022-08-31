@@ -11,12 +11,26 @@ public class Pannier extends Tools {
 
     @FindBy(xpath = "//a[contains(@Class,'wpmenucart-contents')]")
     private WebElement panier;
-    @FindBy(xpath = "//h2[contains(text(),'Basket ')]")
-    private WebElement xpath_Basket;
+   // @FindBy(xpath = "//h2[contains(text(),'Basket ')]")
+   //
+    @FindBy(xpath = "//a[text()='Mastering JavaScript']")
+    private WebElement Check_Prod;
+    @FindBy(xpath = "//a[contains(text(),'Shop')]")
+    private  WebElement xpath_Shop;
+    @FindBy(xpath = "//h3[contains(text(),'Mastering JavaScript')]")
+    private WebElement xpath_Produit;
+    @FindBy(xpath = "//a[contains(text(),'Add to basket')and @data-product_id='165']")
+    private WebElement xpath_AddToBasket;
+
 
     public Pannier(WebDriver driver) {
         PageFactory.initElements(driver,this);
     }
+    public void clickShop(){ clickElement(xpath_Shop);}
+    public void clickProduit(){ clickElement(xpath_Produit);}
+    public void clickAddToBasket(){ clickElement(xpath_AddToBasket);}
+
+
 
     public void clickPanier() {
         clickElement(panier);
@@ -26,7 +40,8 @@ public class Pannier extends Tools {
 
 
     public void verfierPagePannier(String verf) {
-        checkElement(xpath_Basket,verf);
+        checkElement(Check_Prod,verf);
     }
+
 
 }

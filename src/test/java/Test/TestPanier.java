@@ -15,7 +15,11 @@ public class TestPanier extends SetUp {
         loginPage.insertLoginPwd(JDD.pwd);
         loginPage.clickButtonLogin();
      //   loginPage.verfierPageLogin(JDD.msgPage);
+
         Pannier pannier=new Pannier(driver);
+        pannier.clickShop();
+        pannier.clickProduit();
+        pannier.clickAddToBasket();
         pannier.clickPanier();
         pannier.verfierPagePannier(JDD.msgPanne);
     }
