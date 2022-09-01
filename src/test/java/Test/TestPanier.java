@@ -18,7 +18,7 @@ public class TestPanier extends SetUp {
 
         Pannier pannier=new Pannier(driver);
         pannier.clickShop();
-        pannier.clickProduit();
+       // pannier.clickProduit();
         pannier.clickAddToBasket();
         pannier.clickPanier();
         pannier.verfierPagePannier(JDD.msgPanne);
