@@ -12,6 +12,14 @@ public class Xpaths {
     public static final String pageLoginVF="//a[contains(text(),'Dashboard')]";
     public static final String msgError="//li[contains(text(),': the password you entered for the username ')]";
 
+    //Register Page
+    public static final String email_reg="//input[@id='reg_email']";
+    public static final String pwd_reg="//input[@id='reg_password']";
+    public static final String button_reg="//input[@name='register']";
+    public static final String zone_reg="//p[@class='woocomerce-FormRow form-row']";
+    public static final String verifierpwd="//div[contains(text(),'Strong')]";
+    public static final String pagereg="//p[contains(text(),'Hello')]";
+
     //Shipping page
     public static final String shippingAdd="//a[text()='shipping and billing addresses']";
     public static final String edit="//h3[text() = 'Shipping Address']//following-sibling::a";

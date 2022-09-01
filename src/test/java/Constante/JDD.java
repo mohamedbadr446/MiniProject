@@ -3,6 +3,8 @@ package Constante;
 public class JDD {
 
     public static final String username ="mohamedbadreamine";
+    public static final String email ="mohamedbadreamine@gmail.com";
+    public static final String verifier_pwd="Strong";
     public static final String pwd="BADRE@amine97";
     public static final String msgPanne="Mastering JavaScript";
     public static final String msgPage="Dashboard";
@@ -11,4 +13,5 @@ public class JDD {
     public static final String msgError="Error: the password you entered for the username "+ username +" is incorrect. Lost your password?";
     public static final String msgVerifMyAcount="new arrivals";
     public static final String produit="Mastering JavaScript";
+    public static final String verifier_Reg="Hello";
 }
