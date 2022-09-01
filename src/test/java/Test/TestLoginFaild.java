@@ -11,7 +11,7 @@ public class TestLoginFaild extends SetUp {
     public void runLogin() {
         LoginFaildPage login=new LoginFaildPage(driver);
         login.clickMyaccount();
-        login.insertEmail(JDD.email);
+        login.insertEmail(JDD.username);
         login.insertPwd(JDD.pwdfaild);
         login.clickButton();
         login.verfierMsgError(JDD.msgError);

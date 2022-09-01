@@ -11,7 +11,7 @@ public class TestPanier extends SetUp {
     public void runLogin() {
         LoginPage loginPage=new LoginPage(driver);
         loginPage.clickMyaccount();
-        loginPage.insertLoginEmail(JDD.email);
+        loginPage.insertLoginEmail(JDD.username);
         loginPage.insertLoginPwd(JDD.pwd);
         loginPage.clickButtonLogin();
         loginPage.verfierPageLogin(JDD.msgPage);

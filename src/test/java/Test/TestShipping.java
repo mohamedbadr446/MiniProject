@@ -12,7 +12,7 @@ public class TestShipping extends SetUp {
         LoginPage loginPage=new LoginPage(driver);
         ShippingPage shippingAddress = new ShippingPage(driver);
         loginPage.clickMyaccount();
-        loginPage.insertLoginEmail(JDD.email);
+        loginPage.insertLoginEmail(JDD.username);
         loginPage.insertLoginPwd(JDD.pwd);
         loginPage.clickButtonLogin();
         loginPage.verfierPageLogin(JDD.msgPage);
