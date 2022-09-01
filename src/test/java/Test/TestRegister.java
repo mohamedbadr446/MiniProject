@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class TestRegister extends SetUp {
 
     @Test
-    public void runLogin() {
+    public void runRegister() {
         LoginRegisterSucc loginpage=new LoginRegisterSucc(driver);
         loginpage.clickMyaccount();
         loginpage.insertRegisterEmail(JDD.email);
