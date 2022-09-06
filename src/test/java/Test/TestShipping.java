@@ -4,10 +4,12 @@ import Connexion.SetUp;
 import Constante.JDD;
 import Pages.LoginPage;
 import Pages.ShippingPage;
+import com.xpandit.testng.annotations.Xray;
 import org.testng.annotations.Test;
 
 public class TestShipping extends SetUp {
     @Test
+    @Xray(requirement = "BACBPI-154", test = "BACBPI-235")
     public void runShippingTest() {
         LoginPage loginPage=new LoginPage(driver);
         ShippingPage shippingAddress = new ShippingPage(driver);
