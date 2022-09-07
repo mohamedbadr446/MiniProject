@@ -13,6 +13,7 @@ public class TestRegister extends SetUp {
     @Xray(requirement = "BACBPI-156", test = "BACBPI-225")
     public void runRegister() {
         LoginRegisterSucc loginpage=new LoginRegisterSucc(driver);
+        loginpage.verifierLogo();
         loginpage.clickMyaccount();
         loginpage.insertRegisterEmail(JDD.email);
         loginpage.insertRegisterPwd(JDD.pwd);

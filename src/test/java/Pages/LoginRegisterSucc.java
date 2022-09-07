@@ -33,6 +33,9 @@ public class LoginRegisterSucc extends Tools {
 	private WebElement verifier_pwd;
 	@FindBy(xpath = Xpaths.pagereg)
 	private WebElement page_reg;
+	@FindBy(xpath = Xpaths.logoHome)
+	private WebElement logo;
+
 
 	public LoginRegisterSucc(WebDriver driver) {
 		PageFactory.initElements(driver,this);
@@ -65,6 +68,16 @@ public class LoginRegisterSucc extends Tools {
 
 	public void verfierPageReg(String text) {
 		checkElement(page_reg,text);
+	}
+	public void verifierLogo()
+	{
+
+		if(logo.isEnabled()){
+			System.out.println("OK Logo");
+		}else {
+			System.out.println("KO Logo");
+		}
+
 	}
 
 }

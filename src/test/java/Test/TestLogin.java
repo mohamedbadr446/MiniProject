@@ -11,6 +11,7 @@ public class TestLogin extends SetUp {
     public void runLogin() {
         LoginPage loginPage=new LoginPage(driver);
         loginPage.clickMyaccount();
+        loginPage.verifierLogo();
         loginPage.insertLoginEmail(JDD.username);
         loginPage.insertLoginPwd(JDD.pwd);
         loginPage.clickButtonLogin();

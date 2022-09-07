@@ -21,6 +21,8 @@ public class Myaccount extends Tools {
 
     @FindBy(xpath = Xpaths.verifHome)
     WebElement verifhome;
+    @FindBy(xpath = Xpaths.logoHome)
+    private WebElement logo;
 
     WebDriver driver;
 
@@ -44,5 +46,15 @@ public class Myaccount extends Tools {
     public void verifhome(String text)
     {
         checkElement(verifhome,text);
+    }
+    public void verifierLogo()
+    {
+
+        if(logo.isEnabled()){
+            System.out.println("OK Logo");
+        }else {
+            System.out.println("KO Logo");
+        }
+
     }
 }

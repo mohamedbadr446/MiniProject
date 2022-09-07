@@ -12,6 +12,7 @@ public class TestShipping extends SetUp {
     @Xray(requirement = "BACBPI-154", test = "BACBPI-235")
     public void runShippingTest() {
         LoginPage loginPage=new LoginPage(driver);
+        loginPage.verifierLogo();
         ShippingPage shippingAddress = new ShippingPage(driver);
         loginPage.clickMyaccount();
         loginPage.insertLoginEmail(JDD.username);
