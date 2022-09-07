@@ -25,7 +25,7 @@ pipeline {
             stage('Import results to Xray') {
 
             steps {
-                step([$class: 'XrayImportBuilder', endpointName: '/testng', importFilePath: 'target/surefire-reports/testng-results.xml', importToSameExecution: 'true', projectKey: 'BACBPI', serverInstance: '207f484ff4cdb0c327754d44a11ad72364f5463d94ae5ca899072d014666584a'])
+                step([$class: 'XrayImportBuilder', endpointName: '/testng', importFilePath: 'target/surefire-reports/testng-results.xml', importToSameExecution: 'true', projectKey: 'BACBPI', serverInstance: '57447907779B4661AE36C9E6886438C0'])
             }
 
         }
