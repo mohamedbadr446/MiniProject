@@ -25,8 +25,8 @@ pipeline {
             stage('Import results to Xray') {
             steps{
              script {
-                    bat ''' curl -H "Content-Type: /target/surefire-reports/" -u admin:admin -F "file=@testng-results.xml" https://team-1612820401992.atlassian.net/jira/software/projects/BACBPI/boards/48'''
 
+                    bat '''curl -H 'Content-Type:/target/surefire-reports/testng-results.xml' -X POST -H "Authorization: Bearer ${JIRA_XRAY_TOKEN} "--data @"/target/surefire-reports/testng-results.xml" https://team-1612820401992.atlassian.net/rest/raven/1.0/import/execution/testng"'''
                       }
              }
         }
