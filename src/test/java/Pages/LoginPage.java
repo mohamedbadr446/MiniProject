@@ -35,6 +35,8 @@ public class LoginPage extends Tools {
 
     @FindBy(xpath = Xpaths.logoHome)
     private WebElement logo;
+    @FindBy(xpath = Xpaths.accountDetail)
+    private WebElement accountDetail;
 
 
     public LoginPage(WebDriver driver) {
@@ -68,7 +70,9 @@ public class LoginPage extends Tools {
         }else {
             System.out.println("KO Logo");
         }
-
     }
 
+    public void clickAccountDetail(){
+        clickElement(accountDetail);
+    }
 }

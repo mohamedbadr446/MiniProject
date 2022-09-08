@@ -11,6 +11,7 @@ public class Xpaths {
     public static final String login_button="//input[@name='login']";
     public static final String pageLoginVF="//a[contains(text(),'Dashboard')]";
     public static final String msgError="//li[contains(text(),': the password you entered for the username ')]";
+    public static final String accountDetail="//a[contains(text(),'Account Details')]";
 
     //Register Page
     public static final String email_reg="//input[@id='reg_email']";
