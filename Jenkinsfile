@@ -22,18 +22,17 @@ pipeline {
 
             }
         }
-        stage('Update XRay') {
-           steps {
-               script{
-                       bat '''
-                           type xray-infos.json | sed -r "s/<build>/${BUILD_NUMBER}/g" | sed -r "s/<job>/${JOB_NAME}/g" | sed -r "s/<testPlanKey>/${TEST_PLAN_KEY}/g" > temp.json
-                           move temp.json xray-infos.json
-                           zip results.zip /target/surefire-reports/testng-results.xml
-                       '''
-                       env.TEST_EXEC_KEY = sh(script:"curl -s -H 'accept: application/json' -H 'Content-Type: multipart/form-data' -H 'Authorization: Bearer ${JIRA_XRAY_TOKEN}' -F 'file=@results.zip' POST https://team-1612820401992.atlassian.net/jira/software/projects/BACBPI/boards/48/backlog |  jq -r .testExecIssue.key", returnStdout:true).trim();
-                       bat "curl -H 'Content-Type: application/json' -H 'Authorization: Bearer ${JIRA_XRAY_TOKEN}' -X PUT  --data '@xray-infos.json' https://team-1612820401992.atlassian.net/jira/software/projects/BACBPI/boards/48/backlog/${TEST_EXEC_KEY}"               }
-          }
-       }
+            stage('Import results to Xray') {
+
+            steps {
+                step([$class: 'XrayImportBuilder', endpointName: '/testng', importFilePath: 'target/surefire-reports/testng-results.xml', importToSameExecution: 'true', projectKey: 'BACBPI', serverInstance: 'ece4e698-6ae7-4336-baa2-2f153eee26e1'])
+                step(
+                bat '''  curl -k -H "Content-Type: target/surefire-reports/testng-results.xml" -X POST -H "Authorization: Bearer "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnQiOiJiNmNhZGQwNS1lMzQxLTNmMTctYjU1Zi00OTM0MTI4MWQ4MmEiLCJhY2NvdW50SWQiOiI2MmU3ZmNmMDNjYzIwYzA2YzhhZTMyYjYiLCJpc1hlYSI6ZmFsc2UsImlhdCI6MTY2MDgzNTA4MywiZXhwIjoxNjYwOTIxNDgzLCJhdWQiOiJEMkE5RTBGMTMyRTM0NUFBODRGNzk5MTY4MUE5QkU3MCIsImlzcyI6ImNvbS54cGFuZGl0LnBsdWdpbnMueHJheSIsInN1YiI6IkQyQTlFMEYxMzJFMzQ1QUE4NEY3OTkxNjgxQTlCRTcwIn0.i9IqKtM1u7Xniq4BZszUgWYh8P9nLZ1DdKP3qfjBqtw""  --data @"testng-results.xml" https://xray.cloud.getxray.app/api/v1/import/execution/cucumber
+                                '''
+                )
+            }
+
+        }
 
     }
 }
