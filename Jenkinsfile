@@ -25,13 +25,13 @@ pipeline {
         stage('Update XRay') {
            steps {
                script{
-                       sh '''
+                       bat '''
                            cat xray-infos.json | sed -r "s/<build>/${BUILD_NUMBER}/g" | sed -r "s/<job>/${JOB_NAME}/g" | sed -r "s/<testPlanKey>/${TEST_PLAN_KEY}/g" > temp.json
                            mv temp.json xray-infos.json
                            zip results.zip /target/surefire-reports/testng-results.xml
                        '''
                        env.TEST_EXEC_KEY = sh(script:"curl -s -H 'accept: application/json' -H 'Content-Type: multipart/form-data' -H 'Authorization: Bearer ${JIRA_XRAY_TOKEN}' -F 'file=@results.zip' POST https://team-1612820401992.atlassian.net/jira/software/projects/BACBPI/boards/48/backlog |  jq -r .testExecIssue.key", returnStdout:true).trim();
-                       sh "curl -H 'Content-Type: application/json' -H 'Authorization: Bearer ${JIRA_XRAY_TOKEN}' -X PUT  --data '@xray-infos.json' https://team-1612820401992.atlassian.net/jira/software/projects/BACBPI/boards/48/backlog/${TEST_EXEC_KEY}"               }
+                       bat "curl -H 'Content-Type: application/json' -H 'Authorization: Bearer ${JIRA_XRAY_TOKEN}' -X PUT  --data '@xray-infos.json' https://team-1612820401992.atlassian.net/jira/software/projects/BACBPI/boards/48/backlog/${TEST_EXEC_KEY}"               }
           }
        }
 
