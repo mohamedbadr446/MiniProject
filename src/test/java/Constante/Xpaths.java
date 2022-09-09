@@ -36,6 +36,12 @@ public class Xpaths {
     public static final String produit="//h3[contains(text(),'"+JDD.produit+"')]";
     public static final String addToBasket="//a[contains(text(),'Add to basket')and @data-product_id='165']";
 
+    //AccountDetail
+    public static final String currentPwd="//input[contains(@id,'password_current')]";
+    public static final String newPwd="//input[contains(@id,'password_1')]";
+    public static final String conNewPwd="//input[contains(@id,'password_2')]";
+    public static final String saveChange="//input[contains(@value,'Save changes')]";
+
 
 
 }
