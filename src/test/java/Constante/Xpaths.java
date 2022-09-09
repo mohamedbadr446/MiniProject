@@ -41,6 +41,7 @@ public class Xpaths {
     public static final String newPwd="//input[contains(@id,'password_1')]";
     public static final String conNewPwd="//input[contains(@id,'password_2')]";
     public static final String saveChange="//input[contains(@value,'Save changes')]";
+    public static final String vrfMsgChangPwd="//div[contains(text(),'Account details changed successfully.')]";
 
 
 

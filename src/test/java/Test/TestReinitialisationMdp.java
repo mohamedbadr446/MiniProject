@@ -26,7 +26,19 @@ public class TestReinitialisationMdp extends SetUp {
         detailPage.insertNewPwd(JDD.newPwd);
         LoginRegisterSucc registerSucc=new LoginRegisterSucc(driver);
         registerSucc.verfierPwdSucc(JDD.verifier_pwd);
-        detailPage.insertConfirmeNewPwd(JDD.conNewPwd);
+        detailPage.insertConfirmeNewPwd(JDD.newPwd);
         detailPage.clickButtonSaveChage();
+        detailPage.verfifierMsgChangPwd(JDD.msgVrfPwd);
+
+        //Revenir au premier mot de passe
+
+        loginPage.clickAccountDetail();
+        detailPage.insertCurrentPwd(JDD.newPwd);
+        detailPage.insertNewPwd(JDD.pwd);
+        registerSucc.verfierPwdSucc(JDD.verifier_pwd);
+        detailPage.insertConfirmeNewPwd(JDD.pwd);
+        detailPage.clickButtonSaveChage();
+        detailPage.verfifierMsgChangPwd(JDD.msgVrfPwd);
+
     }
 }
