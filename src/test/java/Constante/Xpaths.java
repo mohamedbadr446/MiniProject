@@ -35,6 +35,9 @@ public class Xpaths {
     public static final String produit="//h3[contains(text(),'"+JDD.produit+"')]";
     public static final String addToBasket="//a[contains(text(),'Add to basket')and @data-product_id='165']";
 
-
+    //Payment Page
+   public static final String shopPay="//li[@id='wpmenucartli']";
+   public static final String updateBasket="//input[@name='update_cart']";
+   public static final String checkout="//a[@class='checkout-button button alt wc-forward']";
 
 }
