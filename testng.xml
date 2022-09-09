@@ -4,6 +4,15 @@
     <listeners>
         <listener class-name="com.xpandit.testng.annotations.XrayListener"></listener>
     </listeners>
+    <test thread-count="5" name="Test6">
+        <classes>
+            <class name="Test.TestReinitialisationMdp">
+                <methods>
+                    <include name="runReinitialisationMdp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
     <test thread-count="5" name="Test2">
         <classes>
             <class name="Test.TestLoginFaild">
