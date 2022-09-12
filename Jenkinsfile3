@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clean') {
+            steps {
+                // Get some code from a GitHub repository
+                git branch: 'main', url: 'git@github.com:mohamedbadr446/MiniProject.git'
+
+                // Run Maven on a Windows agent.
+                bat "mvn clean"
+
+            }
+        }
+            stage('Test') {
+            steps {
+                // Get some code from a GitHub repository
+                git branch: 'main', url: 'git@github.com:mohamedbadr446/MiniProject.git'
+
+                // Run Maven on a Windows agent.
+                bat "mvn test -Dsurefire.suiteXmlFiles=testng.xml"
+
+            }
+        }
+    }
+}

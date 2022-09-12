@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class LoginPage extends Tools {
 
@@ -32,6 +33,11 @@ public class LoginPage extends Tools {
     @FindBy(xpath = Xpaths.pageLoginVF)
     private WebElement xpathPageLogin;
 
+    @FindBy(xpath = Xpaths.logoHome)
+    private WebElement logo;
+    @FindBy(xpath = Xpaths.accountDetail)
+    private WebElement accountDetail;
+
 
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver,this);
@@ -56,5 +62,17 @@ public class LoginPage extends Tools {
 
         checkElement(xpathPageLogin,verf);
     }
+    public void verifierLogo()
+    {
 
+        if(logo.isEnabled()){
+            System.out.println("OK Logo");
+        }else {
+            System.out.println("KO Logo");
+        }
+    }
+
+    public void clickAccountDetail(){
+        clickElement(accountDetail);
+    }
 }

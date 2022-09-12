@@ -14,4 +14,7 @@ public class JDD {
     public static final String msgVerifMyAcount="new arrivals";
     public static final String produit="Mastering JavaScript";
     public static final String verifier_Reg="Hello";
+    public static final String newPwd="AMINE@badre97";
+    public static final String conNewPwd="AMINE@badre97";
+
 }

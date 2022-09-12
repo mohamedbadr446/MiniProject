@@ -12,8 +12,11 @@ public class TestMyAcc extends SetUp{
     public void run()
     {
         Myaccount myaccount=new Myaccount(driver);
+        myaccount.verifierLogo();
         myaccount.cliqueMyaccount();
         myaccount.cliqueLogo();
         myaccount.verifhome(JDD.msgVerifMyAcount);
+
+
     }
 }

@@ -12,6 +12,7 @@ public class TestPanier extends SetUp {
     @Xray(requirement = "BACBPI-164", test = "BACBPI-345")
     public void runLogin() {
         LoginPage loginPage=new LoginPage(driver);
+        loginPage.verifierLogo();
         loginPage.clickMyaccount();
         loginPage.insertLoginEmail(JDD.username);
         loginPage.insertLoginPwd(JDD.pwd);

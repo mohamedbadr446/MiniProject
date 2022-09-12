@@ -11,6 +11,7 @@ public class Xpaths {
     public static final String login_button="//input[@name='login']";
     public static final String pageLoginVF="//a[contains(text(),'Dashboard')]";
     public static final String msgError="//li[contains(text(),': the password you entered for the username ')]";
+    public static final String accountDetail="//a[contains(text(),'Account Details')]";
 
     //Register Page
     public static final String email_reg="//input[@id='reg_email']";
@@ -39,5 +40,19 @@ public class Xpaths {
    public static final String shopPay="//li[@id='wpmenucartli']";
    public static final String updateBasket="//input[@name='update_cart']";
    public static final String checkout="//a[@class='checkout-button button alt wc-forward']";
+   public static final String checkPayments="//input[@id='payment_method_cheque']";
+   public static final String cashOnDelivery="//input[@id='payment_method_cod']";
+   public static final String paypalExpress="//input[@id='payment_method_ppec_paypal']";
+   public static final String placeOrder="//input[@id='place_order']";
+   public static final String orderDetails="//h2[contains(text(),'Order Details')]";
+
+    //AccountDetail
+    public static final String currentPwd="//input[contains(@id,'password_current')]";
+    public static final String newPwd="//input[contains(@id,'password_1')]";
+    public static final String conNewPwd="//input[contains(@id,'password_2')]";
+    public static final String saveChange="//input[contains(@value,'Save changes')]";
+
+
+
 
 }
