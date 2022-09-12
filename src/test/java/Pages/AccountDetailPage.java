@@ -1,5 +1,6 @@
 package Pages;
 
+import Constante.JDD;
 import Constante.Xpaths;
 import Utils.Tools;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +22,9 @@ public class AccountDetailPage extends Tools {
     @FindBy(xpath = Xpaths.saveChange)
     private WebElement saveChange;
 
+    @FindBy(xpath = Xpaths.vrfMsgChangPwd)
+    private WebElement msgVrfPwd;
+
     public AccountDetailPage(WebDriver driver)
     {
         PageFactory.initElements(driver,this);
@@ -37,15 +41,16 @@ public class AccountDetailPage extends Tools {
     }
     public void insertConfirmeNewPwd(String text)
     {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        insertElement(currentPwd,text);
+        insertElement(conNewPwd,text);
     }
     public void clickButtonSaveChage()
     {
         clickElement(saveChange);
     }
+
+    public void verfifierMsgChangPwd(String text)
+    {
+        checkElement(msgVrfPwd,text);
+    }
+
 }
