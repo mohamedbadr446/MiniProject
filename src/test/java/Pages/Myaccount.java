@@ -24,12 +24,10 @@ public class Myaccount extends Tools {
     @FindBy(xpath = Xpaths.logoHome)
     private WebElement logo;
 
-    WebDriver driver;
-
-    int time=30;
-
+    @FindBy(xpath = Xpaths.logOut)
+    private WebElement logOut;
     public Myaccount(WebDriver driver) {
-        //this.driver = driver;
+
         PageFactory.initElements(driver,this);
     }
 
@@ -49,12 +47,16 @@ public class Myaccount extends Tools {
     }
     public void verifierLogo()
     {
-
         if(logo.isEnabled()){
             System.out.println("OK Logo");
         }else {
             System.out.println("KO Logo");
         }
-
     }
+    public void clickLogOut()
+    {
+        clickElement(logOut);
+    }
+
+
 }

@@ -31,11 +31,29 @@
             </class>
         </classes>
     </test>
+    <test thread-count="5" name="Test8">
+        <classes>
+            <class name="Test.TestMyAcc">
+                <methods>
+                    <include name="runLogOut"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
     <test thread-count="5" name="Test4">
         <classes>
             <class name="Test.TestPanier">
                 <methods>
                     <include name="runLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="5" name="Test7">
+        <classes>
+            <class name="Test.TestPanier">
+                <methods>
+                    <include name="runnAddProductPanier"/>
                 </methods>
             </class>
         </classes>

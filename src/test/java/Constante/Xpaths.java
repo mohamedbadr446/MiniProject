@@ -4,6 +4,7 @@ public class Xpaths {
 
     //MyAccount
     public static final String myAccount="//a[contains(text(),'My Account')]";
+    public static final String logOut="//a[contains(text(),'Logout')]";
 
     //Login Page
     public static final String login_username="//input[@name='username']";
@@ -35,6 +36,9 @@ public class Xpaths {
     public static final String shop="//a[contains(text(),'Shop')]";
     public static final String produit="//h3[contains(text(),'"+JDD.produit+"')]";
     public static final String addToBasket="//a[contains(text(),'Add to basket')and @data-product_id='165']";
+    public static final String viewBasket="//a[contains(text(),'View Basket')]";
+    public static final String price="//h3[contains(.,'"+JDD.produit+"')]/following-sibling::span[contains(@class,'price')]";
+    public static final String pricePannie="//td[contains(@data-title,'Price')]//child::span[contains(@class,'woocommerce-Price-amount amount')]";
 
     //AccountDetail
     public static final String currentPwd="//input[contains(@id,'password_current')]";

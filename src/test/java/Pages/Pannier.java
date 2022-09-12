@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class Pannier extends Tools {
     public WebDriver driver;
@@ -20,6 +21,12 @@ public class Pannier extends Tools {
     private WebElement produit;
     @FindBy(xpath = Xpaths.addToBasket)
     private WebElement xpath_AddToBasket;
+    @FindBy(xpath = Xpaths.viewBasket)
+    private WebElement viewBasket;
+    @FindBy(xpath = Xpaths.price)
+    private WebElement price;
+    @FindBy(xpath = Xpaths.pricePannie)
+    private WebElement pricePannie;
 
 
     public Pannier(WebDriver driver) {
@@ -48,5 +55,18 @@ public class Pannier extends Tools {
         checkElement(Check_Prod, verf);
     }
 
+    public void clickViewBasket()
+    {
+        clickElement(viewBasket);
+    }
 
+    public String getPrice()
+    {
+        return price.getText();
+    }
+    public void verifierPrix(String text)
+    {
+        checkElement(pricePannie,text);
+        System.out.println(pricePannie.getText());
+    }
 }
