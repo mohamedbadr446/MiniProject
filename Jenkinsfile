@@ -8,7 +8,7 @@ pipeline {
                 git branch: 'main', url: 'git@github.com:mohamedbadr446/MiniProject.git'
 
                 // Run Maven on a Windows agent.
-                bat 'mvn clean'
+
 
             }
         }
