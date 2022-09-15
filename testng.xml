@@ -67,6 +67,15 @@
             </class>
         </classes>
     </test>
+    <test thread-count="5" name="Test10">
+        <classes>
+        <class name="Test.TestPayment">
+                <methods>
+                    <include name="run"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
     <test thread-count="5" name="Test1">
         <classes>
             <class name="Test.TestRegister">

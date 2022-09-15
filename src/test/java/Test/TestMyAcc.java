@@ -17,6 +17,8 @@ public class TestMyAcc extends SetUp{
         myaccount.cliqueMyaccount();
         myaccount.cliqueLogo();
         myaccount.verifhome(JDD.msgVerifMyAcount);
+
+
     }
 
     @Test(priority = 2)
