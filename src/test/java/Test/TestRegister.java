@@ -21,7 +21,7 @@ public class TestRegister extends SetUp {
         loginpage.clickZoneRegister();
         loginpage.verfierPwdSucc(JDD.verifier_pwd);
         loginpage.clickButtonRegister();
-        loginpage.verfierPageReg(JDD.verifier_Reg);
+      //  loginpage.verfierPageReg(JDD.verifier_Reg);
 
     }
 }
